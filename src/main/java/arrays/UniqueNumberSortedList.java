@@ -2,13 +2,7 @@ package arrays;
 
 public class UniqueNumberSortedList {
 
-
-    public static void main(String[] args) {
-        int[] array = new int[]{1, 1, 2, 3, 4, 4, 5, 5};
-        System.out.println(uniqueNumbers(array));
-    }
-
-    private static Integer uniqueNumbers(int[] arr) {
+    public Integer uniqueNumbers(int[] arr) {
         if (arr == null || arr.length == 0)
             return null;
         else if (arr.length == 1)

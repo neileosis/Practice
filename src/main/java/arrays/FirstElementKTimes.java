@@ -10,13 +10,7 @@ import java.util.Map;
  */
 public class FirstElementKTimes {
 
-    public static void main(String[] args) {
-        int[] array = new int[]{1, 7, 4, 3, 4, 8, 7};
-        int k = 2;
-        System.out.println(firstElement(array, k));
-    }
-
-    private static int firstElement(int[] arr, int k) {
+    public int firstElement(int[] arr, int k) {
         if (arr == null || arr.length == 0)
             return -1;
         else if (k == 1)

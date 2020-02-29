@@ -1,6 +1,5 @@
 package trees;
 
-import utils.BinaryTreePrinter;
 import utils.TreeNode;
 
 import java.util.LinkedList;
@@ -10,30 +9,7 @@ import java.util.LinkedList;
  */
 public class SerializeBinaryTree {
 
-    public static void main(String[] args) {
-        SerializeBinaryTree serializeBinaryTree = new SerializeBinaryTree();
-
-        TreeNode<Integer> start = new TreeNode<>(1);
-        start.left = new TreeNode<>(2);
-        start.left.left = new TreeNode<>(3);
-        start.right = new TreeNode<>(4);
-        start.right.left = new TreeNode<>(5);
-        start.right.left.right = new TreeNode<>(6);
-        start.right.right = new TreeNode<>(7);
-        start.right.right.left = new TreeNode<>(8);
-        start.right.right.right = new TreeNode<>(9);
-
-        System.out.println("---- Original Tree ----------------------");
-        BinaryTreePrinter.printNode(start);
-        String serializedTree = serializeBinaryTree.serialize(start);
-        System.out.println(serializedTree);
-        System.out.println();
-        TreeNode<Integer> deserializedTree = serializeBinaryTree.deserialize(serializedTree);
-        System.out.println("---- Deserialized Tree ----------------------");
-        BinaryTreePrinter.printNode(deserializedTree);
-    }
-
-    private String serialize(TreeNode treeNode) {
+    public String serialize(TreeNode treeNode) {
         if (treeNode == null)
             return "[]";
         String serializedString = "[";
@@ -55,8 +31,8 @@ public class SerializeBinaryTree {
         return serializedString + "]";
     }
 
-    private TreeNode<Integer> deserialize(String inputString) {
-        if (inputString == null || inputString.equals("[]"))
+    public TreeNode<Integer> deserialize(String inputString) {
+        if (inputString == null || inputString.equals("") || inputString.equals("[]"))
             return null;
         String[] inputSplit = inputString.replace("[","").replace("]","").split(",");
         TreeNode<Integer> start = new TreeNode<>(Integer.valueOf(inputSplit[0]));
